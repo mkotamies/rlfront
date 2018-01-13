@@ -10,14 +10,18 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      results: []
+      results: [],
+      fetching: false
     };
   }
 
   componentDidMount() {
+    this.setState({ fetching: true });
     fetch(api + "/games")
       .then(response => response.json())
-      .then(res => this.setState({ results: res }))
+      .then(res => {
+        this.setState({ results: res, fetching: false });
+      })
       .catch(err => console.log(err));
   }
 
@@ -34,8 +38,11 @@ class App extends Component {
           <div className="layer" />
           <h1 className="App-title">Roguelike hackathon tulokset</h1>
         </header>
-        <div className="Container">{this.renderResults()}</div>
-        <p className="App-intro" />
+        {this.state.fetching ? (
+          <div className="Loading" />
+        ) : (
+          <div className="Container">{this.renderResults()}</div>
+        )}
       </div>
     );
   }
