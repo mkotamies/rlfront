@@ -1,2 +1,1 @@
-# rlfront
-Roguelike hackathon front
+Roguelike hackathonin tulokset
