@@ -15,7 +15,7 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
+  fetchResults() {
     this.setState({ fetching: true });
     fetch(api + "/games")
       .then(response => response.json())
@@ -23,6 +23,11 @@ class App extends Component {
         this.setState({ results: res, fetching: false });
       })
       .catch(err => console.log(err));
+  }
+
+  componentDidMount() {
+    this.fetchResults();
+    setInterval(() => this.fetchResults(), 30000);
   }
 
   renderResults() {
@@ -36,7 +41,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <div className="layer" />
-          <h1 className="App-title">Roguelike hackathon tulokset</h1>
+          <h1 className="App-title">Roguelike hackathonin tulokset</h1>
         </header>
         {this.state.fetching ? (
           <div className="Loading" />
