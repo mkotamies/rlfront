@@ -15,7 +15,9 @@ const ResultComponent = result => (
     <Panel.Body>XP {result.xp || "-"}</Panel.Body>
     <Panel.Body>
       Pelin kesto{" "}
-      {result.durationMinutes ? result.durationMinutes.toFixed(1) : "-"}
+      {result.durationMinutes
+        ? result.durationMinutes.toFixed(1) + " min"
+        : "-"}
     </Panel.Body>
   </Panel>
 );
