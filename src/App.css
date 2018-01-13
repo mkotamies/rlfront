@@ -8,21 +8,40 @@
 }
 
 .App-header {
-  background-color: #222;
   height: 150px;
   padding: 20px;
   color: white;
+  background-image: url("banner.png");
+  background-size: cover;
+}
+
+.layer {
+  background-color: rgba(25, 133, 161, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: inherit;
 }
 
 .App-title {
   font-size: 1.5em;
+  position: absolute;
 }
 
 .App-intro {
   font-size: large;
 }
 
+.Container {
+  padding: 9px;
+}
+
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
