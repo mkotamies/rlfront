@@ -32,7 +32,7 @@ class App extends Component {
 
   renderResults() {
     return this.state.results.map((result, index) => (
-      <ResultComponent key={index} {...result} />
+      <ResultComponent key={index} {...result} index={index + 1} />
     ));
   }
 

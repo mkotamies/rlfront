@@ -6,7 +6,10 @@ import "./App.css";
 const ResultComponent = result => (
   <Panel bsStyle="primary">
     <Panel.Heading>
-      <Panel.Title componentClass="h3">{result.client}</Panel.Title>
+      <Panel.Title componentClass="h3">
+        #{result.index}
+        {" " + result.client}
+      </Panel.Title>
     </Panel.Heading>
     <Panel.Body>Kultaa {result.gold || "-"}</Panel.Body>
     <Panel.Body>XP {result.xp || "-"}</Panel.Body>
